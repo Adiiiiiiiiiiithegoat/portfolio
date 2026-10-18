@@ -26,7 +26,7 @@ All content is in `index.html`:
 - **Recognition** → the `.award` blocks
 - **Stack** → the three blocks inside `.stack`
 
-Colours are CSS variables at the top of the `<style>` block, with separate light and dark values. If you change the accent colour, update it in the favicon `<link rel="icon">` (`%232f5bea`) and in `scripts/make_og.py` too.
+Colours are CSS variables at the top of the `<style>` block. Dark is the default (`:root`); light values live under `:root[data-theme="light"]` and apply only when a visitor picks light with the toggle. Badge, stat and glow colours (gold, violet, green) are tokens there too. If you change the accent colour, update it in the favicon `<link rel="icon">` (`%232f5bea`) and in `scripts/make_og.py` too.
 
 If you change the name, headline or awards, regenerate the preview image:
 

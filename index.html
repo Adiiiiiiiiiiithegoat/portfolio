@@ -18,58 +18,101 @@
 <meta name="twitter:title" content="Aditya Ranjith — Developer">
 <meta name="twitter:description" content="Automation, AI tools and web apps. USAII Global AI Hackathon winner, SIH 2026 finalist.">
 <meta name="twitter:image" content="https://aditya-ranjith.vercel.app/og.png">
-<meta name="theme-color" content="#fafaf8" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0e0e0d" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#0a0a0b" id="themeColor">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232f5bea'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='system-ui,-apple-system,Segoe UI,sans-serif' font-size='30' font-weight='700' letter-spacing='-1' fill='%23fff'%3EAR%3C/text%3E%3C/svg%3E">
-<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+<script>try{if(localStorage.getItem('theme')==='light'){document.documentElement.setAttribute('data-theme','light');document.getElementById('themeColor').content='#fafaf8';}}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
+/* dark is the default; light only when chosen with the toggle */
 :root{
-  --bg:#fafaf8; --surface:#ffffff; --text:#111110; --muted:#6b6a66; --faint:#a3a19b;
-  --line:#e6e4df; --accent:#2f5bea; --accent-soft:#eef2fe; --chip:#f2f1ed;
+  --bg:#0a0a0b; --surface:#121214; --text:#ededeb; --muted:#9b9a96; --faint:#55545a;
+  --line:#232326; --chip:#1a1a1d;
+  --accent:#8fa8ff; --accent-soft:#171d36;
+  --violet:#c4a5ff; --violet-soft:#221a36;
+  --gold:#f2c46d; --gold-soft:#2a2314;
+  --green:#6ee7a0; --green-soft:#11281c;
+  --teal:#6ee7d0;
+  --glow-1:rgba(79,108,255,.32); --glow-2:rgba(160,100,255,.22); --glow-3:rgba(60,220,200,.12);
+  --dots:rgba(255,255,255,.07);
   --sans:"Inter Tight",system-ui,-apple-system,sans-serif;
   --mono:"JetBrains Mono",ui-monospace,monospace;
+  color-scheme:dark;
 }
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
-    --bg:#0e0e0d; --surface:#161615; --text:#ecebe7; --muted:#9a9891; --faint:#62605b;
-    --line:#262624; --accent:#7d9bff; --accent-soft:#1a2140; --chip:#1e1e1c;
-  }
-}
-:root[data-theme="dark"]{
-  --bg:#0e0e0d; --surface:#161615; --text:#ecebe7; --muted:#9a9891; --faint:#62605b;
-  --line:#262624; --accent:#7d9bff; --accent-soft:#1a2140; --chip:#1e1e1c;
+:root[data-theme="light"]{
+  --bg:#fafaf8; --surface:#ffffff; --text:#111110; --muted:#6b6a66; --faint:#a3a19b;
+  --line:#e6e4df; --chip:#f2f1ed;
+  --accent:#2f5bea; --accent-soft:#eef2fe;
+  --violet:#6b35d6; --violet-soft:#f1eafe;
+  --gold:#7a4f00; --gold-soft:#fbf0d9;
+  --green:#146c34; --green-soft:#e5f5ea;
+  --teal:#0f766e;
+  --glow-1:rgba(47,91,234,.14); --glow-2:rgba(124,58,237,.10); --glow-3:rgba(15,118,110,.07);
+  --dots:rgba(0,0,0,.07);
+  color-scheme:light;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;position:relative}
 a{color:inherit;text-decoration:none}
 a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+::selection{background:color-mix(in srgb,var(--accent) 35%,transparent)}
 .wrap{max-width:960px;margin:0 auto;padding:0 24px}
 .mono{font-family:var(--mono);font-size:12.5px;letter-spacing:.02em;color:var(--muted)}
 
+/* backdrop: dot grid fading out from the top, drifting glow behind the hero */
+body::before{content:"";position:absolute;inset:0 0 auto;height:900px;z-index:-1;pointer-events:none;
+  background-image:radial-gradient(var(--dots) 1px,transparent 1px);background-size:22px 22px;
+  -webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 0%,#000 20%,transparent 75%);mask-image:radial-gradient(ellipse 70% 60% at 50% 0%,#000 20%,transparent 75%)}
+.aurora{position:absolute;top:0;left:0;right:0;height:1000px;overflow:hidden;z-index:-1;pointer-events:none}
+.aurora i{position:absolute;border-radius:50%;filter:blur(60px);animation:drift 16s ease-in-out infinite alternate}
+.aurora i:nth-child(1){width:560px;height:420px;left:calc(50% - 480px);top:-100px;background:var(--glow-1)}
+.aurora i:nth-child(2){width:480px;height:380px;left:50%;top:-140px;background:var(--glow-2);animation-duration:20s;animation-direction:alternate-reverse}
+.aurora i:nth-child(3){width:420px;height:300px;left:calc(50% - 180px);top:70px;background:var(--glow-3);animation-duration:24s}
+@keyframes drift{to{transform:translate(70px,40px) scale(1.12)}}
+
 /* nav */
-header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .2s}
+header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 72%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .2s}
 header.scrolled{border-bottom-color:var(--line)}
 nav{display:flex;align-items:center;justify-content:space-between;height:60px}
-.logo{font-weight:700;letter-spacing:-.02em}
+.logo{font-weight:700;letter-spacing:-.02em;display:flex;align-items:center;gap:10px}
+.mark{width:26px;height:26px;border-radius:7px;display:grid;place-items:center;font-size:11px;font-weight:700;letter-spacing:-.02em;color:#fff;background:linear-gradient(135deg,#4f6bff,#8b5cf6);box-shadow:0 0 18px -4px #6b6bff}
 .links{display:flex;gap:24px;align-items:center}
 .links a{font-size:14px;color:var(--muted);transition:color .15s}
 .links a:hover{color:var(--text)}
-.toggle{background:none;border:1px solid var(--line);border-radius:8px;width:32px;height:32px;cursor:pointer;color:var(--muted);display:grid;place-items:center}
-.toggle:hover{color:var(--text)}
+.toggle{background:none;border:1px solid var(--line);border-radius:8px;width:32px;height:32px;cursor:pointer;color:var(--muted);display:grid;place-items:center;transition:color .15s,border-color .15s}
+.toggle:hover{color:var(--text);border-color:var(--faint)}
+.toggle .moon,[data-theme="light"] .toggle .sun{display:none}
+[data-theme="light"] .toggle .moon{display:block}
+/* scroll progress, CSS-only where scroll timelines exist */
+.progress{position:absolute;left:0;right:0;bottom:-1px;height:2px;transform-origin:left;transform:scaleX(0);background:linear-gradient(90deg,var(--accent),var(--violet),var(--teal))}
+@supports (animation-timeline:scroll()){.progress{animation:grow linear both;animation-timeline:scroll(root)}}
+@keyframes grow{to{transform:scaleX(1)}}
 
 /* hero */
-.hero{padding:96px 0 72px}
+.hero{padding:88px 0 72px}
+.status{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--text);padding:5px 12px 5px 10px;border:1px solid var(--line);border-radius:999px;background:color-mix(in srgb,var(--surface) 70%,transparent);margin-bottom:22px;transition:border-color .2s}
+.status:hover{border-color:color-mix(in srgb,var(--green) 50%,var(--line))}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--green);animation:pulse 2.2s ease-out infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--green) 60%,transparent)}100%{box-shadow:0 0 0 9px transparent}}
 .hero h1{font-size:clamp(44px,8vw,76px);line-height:1;letter-spacing:-.045em;font-weight:700;margin:18px 0 24px}
+.grad{background:linear-gradient(90deg,var(--accent),var(--violet),var(--teal),var(--accent));background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shimmer 10s linear infinite}
+@keyframes shimmer{to{background-position:300% 0}}
 .hero p.lead{font-size:clamp(18px,2.4vw,21px);color:var(--muted);max-width:620px;line-height:1.5}
 .hero p.lead strong{color:var(--text);font-weight:500}
 .cta{display:flex;gap:12px;margin-top:36px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:10px;font-size:14.5px;font-weight:500;border:1px solid var(--line);background:var(--surface);transition:transform .15s,border-color .15s}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:10px;font-size:14.5px;font-weight:500;border:1px solid var(--line);background:var(--surface);transition:transform .15s,border-color .15s,box-shadow .2s}
 .btn:hover{transform:translateY(-1px);border-color:var(--text)}
 .btn.primary{background:var(--text);color:var(--bg);border-color:var(--text)}
+.btn.primary:hover{box-shadow:0 8px 30px -6px color-mix(in srgb,var(--accent) 70%,transparent)}
+
+/* spotlight: a soft glow that follows the pointer (JS sets --x/--y) */
+.spot{position:relative;overflow:hidden}
+.spot::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .3s;
+  background:radial-gradient(380px circle at var(--x,50%) var(--y,0%),color-mix(in srgb,var(--glow,var(--accent)) 13%,transparent),transparent 65%)}
+.spot:hover::before{opacity:1}
+.spot > *{position:relative}
 
 /* stats */
 .stats{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden}
@@ -77,11 +120,16 @@ nav{display:flex;align-items:center;justify-content:space-between;height:60px}
 .stat:last-child{border-right:none}
 .stat b{display:block;font-size:17px;font-weight:600;letter-spacing:-.01em;margin-bottom:4px}
 .stat span{font-size:14px;color:var(--muted)}
+.stat.gold{--glow:var(--gold)} .stat.gold b{color:var(--gold)}
+.stat.violet{--glow:var(--violet)} .stat.violet b{color:var(--violet)}
+.stat.green{--glow:var(--green)} .stat.green b{color:var(--green)}
 
 /* sections */
 section{padding:88px 0 0}
-.sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:32px}
+.sec-head{display:flex;align-items:center;gap:14px;margin-bottom:32px}
 .sec-head h2{font-size:26px;letter-spacing:-.03em;font-weight:600}
+.sec-head .mono{color:var(--accent)}
+.sec-head::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent)}
 
 /* experience */
 .job{display:grid;grid-template-columns:220px 1fr;gap:32px;padding:28px 0;border-top:1px solid var(--line)}
@@ -90,22 +138,32 @@ section{padding:88px 0 0}
 .job .role{color:var(--muted);font-size:14.5px;margin-top:2px}
 .job ul{list-style:none;display:grid;gap:10px}
 .job li{position:relative;padding-left:18px;color:var(--muted)}
-.job li::before{content:"";position:absolute;left:0;top:11px;width:6px;height:1px;background:var(--faint)}
+.job li::before{content:"";position:absolute;left:0;top:11px;width:8px;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--accent),var(--violet))}
 .job li strong{color:var(--text);font-weight:500}
 .job .link{display:inline-block;margin-top:14px;font-size:14px;color:var(--accent)}
+.job .link:hover,.row a:hover{text-decoration:underline;text-underline-offset:3px}
 
 /* projects */
 .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:26px;display:flex;flex-direction:column;transition:border-color .2s,transform .2s}
-.card:hover{border-color:color-mix(in srgb,var(--text) 35%,var(--line));transform:translateY(-2px)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:26px;display:flex;flex-direction:column}
+.card.reveal{transition:opacity .6s ease,transform .3s ease,border-color .2s,box-shadow .2s}
+.card:hover{border-color:color-mix(in srgb,var(--glow,var(--accent)) 45%,var(--line));transform:translateY(-3px);box-shadow:0 18px 40px -24px color-mix(in srgb,var(--glow,var(--accent)) 60%,transparent)}
 .card.wide{grid-column:span 2}
+/* the hackathon winner gets a gradient border */
+.card.feature{--glow:var(--gold);border-color:transparent;background:linear-gradient(var(--surface),var(--surface)) padding-box,linear-gradient(120deg,var(--gold),var(--violet) 45%,var(--accent)) border-box}
+.card.feature:hover{border-color:transparent}
+.card.v{--glow:var(--violet)} .card.g{--glow:var(--green)}
 .badge{align-self:flex-start;font-family:var(--mono);font-size:11.5px;padding:4px 9px;border-radius:13px;background:var(--accent-soft);color:var(--accent);margin-bottom:16px}
+.badge.gold{background:var(--gold-soft);color:var(--gold)}
+.badge.violet{background:var(--violet-soft);color:var(--violet)}
+.badge.green{background:var(--green-soft);color:var(--green)}
 .card h3{font-size:21px;letter-spacing:-.025em;font-weight:600}
 .card .sub{font-size:14.5px;color:var(--muted);margin-top:2px}
 .card p{color:var(--muted);margin-top:14px;font-size:15px}
 .card p strong{color:var(--text);font-weight:500}
 .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:18px}
-.chip{font-family:var(--mono);font-size:11.5px;padding:3px 8px;border-radius:6px;background:var(--chip);color:var(--muted)}
+.chip{font-family:var(--mono);font-size:11.5px;padding:3px 8px;border-radius:6px;background:var(--chip);color:var(--muted);border:1px solid transparent;transition:color .15s,border-color .15s}
+.chip:hover{color:var(--text);border-color:var(--line)}
 .card .links-row{display:flex;gap:18px;margin-top:auto;padding-top:20px;font-size:14px}
 .card .links-row a{color:var(--accent)}
 .card .links-row a:hover{text-decoration:underline;text-underline-offset:3px}
@@ -116,7 +174,8 @@ section{padding:88px 0 0}
 .more h3.label{margin-bottom:8px}
 .row{display:grid;grid-template-columns:220px 1fr auto;gap:24px;align-items:baseline;padding:18px 0;border-top:1px solid var(--line)}
 .row:last-child{border-bottom:1px solid var(--line)}
-.row b{font-weight:600;font-size:15.5px}
+.row b{font-weight:600;font-size:15.5px;transition:color .2s}
+.row:hover b{color:var(--accent)}
 .row span{color:var(--muted);font-size:15px}
 .row a{font-size:14px;color:var(--accent);white-space:nowrap}
 .row .private{font-size:14px;color:var(--muted)}
@@ -126,28 +185,38 @@ section{padding:88px 0 0}
 .award:last-child{border-bottom:1px solid var(--line)}
 .award b{font-weight:600}
 .award span{display:block;color:var(--muted);font-size:15px;margin-top:2px}
+.award .mono::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:10px;vertical-align:1px;background:var(--c,var(--accent))}
+.award.gold{--c:var(--gold)} .award.violet{--c:var(--violet)}
 
 /* stack */
 .stack{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.stack > div{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px}
+.stack > div{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px;transition:border-color .2s}
+.stack > div:hover{border-color:color-mix(in srgb,var(--accent) 35%,var(--line))}
 .stack h3{font-size:14px;font-weight:600;margin-bottom:12px}
 
 /* contact */
-.contact{padding:112px 0 64px;text-align:center}
-.contact h2{font-size:clamp(32px,5vw,44px);letter-spacing:-.035em;font-weight:600}
+.contact{padding:120px 0 72px;text-align:center;position:relative}
+.contact::before{content:"";position:absolute;left:50%;top:40px;width:640px;max-width:100%;height:340px;transform:translateX(-50%);z-index:-1;pointer-events:none;filter:blur(70px);
+  background:radial-gradient(closest-side,var(--glow-1),transparent),radial-gradient(closest-side at 70% 60%,var(--glow-2),transparent)}
+.contact h2{font-size:clamp(32px,5vw,48px);letter-spacing:-.035em;font-weight:600}
 .contact p{color:var(--muted);margin:12px auto 28px;max-width:440px}
 .contact .cta{justify-content:center}
 footer{border-top:1px solid var(--line);padding:24px 0 40px}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a:hover{color:var(--text)}
 
-.reveal{opacity:0;transform:translateY(12px);transition:opacity .6s ease,transform .6s ease}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
 .reveal.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+@media (prefers-reduced-motion:reduce){
+  .reveal,.card.reveal{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+  .aurora i,.grad,.dot{animation:none}
+}
 
 @media (max-width:760px){
   .wrap{padding:0 16px}
   .links a{display:none}
-  .hero{padding:64px 0 48px}
+  .hero{padding:56px 0 48px}
   .stats{grid-template-columns:1fr}
   .stat{border-right:none;border-bottom:1px solid var(--line)}
   .stat:last-child{border-bottom:none}
@@ -160,27 +229,31 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 </style>
 </head>
 <body>
+<div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
 
 <header id="top">
   <nav class="wrap">
-    <a href="#" class="logo">Aditya Ranjith</a>
+    <a href="#" class="logo"><span class="mark" aria-hidden="true">AR</span>Aditya Ranjith</a>
     <div class="links">
       <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
       <a href="#recognition">Recognition</a>
       <a href="#contact">Contact</a>
       <button class="toggle" id="themeToggle" aria-label="Toggle colour theme">
-        <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="sun" aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="moon" aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
       </button>
     </div>
   </nav>
+  <div class="progress" aria-hidden="true"></div>
 </header>
 
 <main class="wrap">
 
   <div class="hero">
+    <a class="status" href="#contact"><span class="dot" aria-hidden="true"></span>Open to internships</a>
     <div class="mono">Developer · Mechanical Engineering @ NITK Surathkal · Oman / India</div>
-    <h1>I build automation, AI tools and web apps.</h1>
+    <h1>I build <span class="grad">automation, AI tools</span> and web apps.</h1>
     <p class="lead">From an <strong>insurance pipeline running in production</strong> to a <strong>hackathon-winning legal aid tool</strong>, I build software that takes real work off people's hands.</p>
     <div class="cta">
       <a class="btn primary" href="#projects">See projects</a>
@@ -190,9 +263,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   </div>
 
   <div class="stats reveal">
-    <div class="stat"><b>Winner</b><span>USAII Global AI Hackathon 2026</span></div>
-    <div class="stat"><b>Finalist</b><span>Smart India Hackathon 2026</span></div>
-    <div class="stat"><b>10–15 min → &lt;1 min</b><span>Policy processing time at Tameen</span></div>
+    <div class="stat spot gold"><b>Winner</b><span>USAII Global AI Hackathon 2026</span></div>
+    <div class="stat spot violet"><b>Finalist</b><span>Smart India Hackathon 2026</span></div>
+    <div class="stat spot green"><b>6–8 min → &lt;1 min</b><span>Policy processing time at Tameen</span></div>
   </div>
 
   <!-- EXPERIENCE -->
@@ -206,7 +279,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       </div>
       <div>
         <ul>
-          <li>Built the <strong>motor insurance policy automation</strong> that connects the Tameen broker portal to multiple insurer portals with Playwright, cutting processing from <strong>10–15 minutes to under a minute</strong> per policy.</li>
+          <li>Built the <strong>motor insurance policy automation</strong> that connects the Tameen broker portal to multiple insurer portals with Playwright, cutting processing from <strong>6–8 minutes to under a minute</strong> per policy.</li>
           <li>Shipped a <strong>Flask web interface</strong> so non-technical staff could run it, with auto-updating installs on every employee machine.</li>
           <li>Built an <strong>Arabic/English OCR pipeline</strong> (RapidOCR / PaddleOCR) that reads vehicle registration cards and driving licences, running in parallel with portal navigation so it adds no time.</li>
           <li>QA-tested the vehicle photo damage-detection system and documented its false positives and missed fraud cases before go-live.</li>
@@ -233,8 +306,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <div class="sec-head"><h2>Selected projects</h2><span class="mono">02</span></div>
 
     <div class="grid">
-      <article class="card wide reveal">
-        <span class="badge">Winner · USAII Global AI Hackathon 2026</span>
+      <article class="card wide feature spot reveal">
+        <span class="badge gold">Winner · USAII Global AI Hackathon 2026</span>
         <h3>HAVEN</h3>
         <div class="sub">Housing Advice, Validation &amp; Eviction Navigator</div>
         <p>An AI tool for renters in England facing eviction under the new Renters' Rights Act. It checks whether a notice is valid, runs the <strong>56-day council-duty clock</strong>, builds a 48-hour action plan and drafts letters to the council. Deadline maths runs in code, not in the model, and every answer stays grounded in the post-reform law.</p>
@@ -245,8 +318,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         </div>
       </article>
 
-      <article class="card reveal">
-        <span class="badge">Finalist · Smart India Hackathon 2026</span>
+      <article class="card v spot reveal">
+        <span class="badge violet">Finalist · Smart India Hackathon 2026</span>
         <h3>NETRA</h3>
         <div class="sub">Disaster damage prioritisation</div>
         <p>Classifies road and building damage from citizen photos, maps it onto the real road network and ranks reports by <strong>who loses hospital access</strong>, not just detection confidence. Hit <strong>0.988 rank correlation</strong> vs 0.576 for the naive approach. Built the full technical side in a 24-hour sprint.</p>
@@ -254,16 +327,16 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <div class="links-row"><a href="https://github.com/Adiiiiiiiiiiithegoat/SIH" target="_blank" rel="noopener">Code ↗</a></div>
       </article>
 
-      <article class="card reveal">
-        <span class="badge">In production</span>
+      <article class="card g spot reveal">
+        <span class="badge green">In production</span>
         <h3>Insurance Automation</h3>
         <div class="sub">Broker-to-insurer policy pipeline</div>
-        <p>The system behind my Tameen work: Playwright scripts that fill insurer portals automatically, OCR on Arabic/English documents and a Flask UI with live progress for staff. Policies go from <strong>10–15 minutes to under one</strong>.</p>
+        <p>The system behind my Tameen work: Playwright scripts that fill insurer portals automatically, OCR on Arabic/English documents and a Flask UI with live progress for staff. Policies go from <strong>6–8 minutes to under one</strong>.</p>
         <div class="chips"><span class="chip">Python</span><span class="chip">Playwright</span><span class="chip">Flask</span><span class="chip">RapidOCR</span></div>
         <div class="links-row"><a href="https://github.com/Adiiiiiiiiiiithegoat/insurance-automation" target="_blank" rel="noopener">Code ↗</a></div>
       </article>
 
-      <article class="card reveal">
+      <article class="card spot reveal">
         <span class="badge">Game</span>
         <h3>Formula 0.1</h3>
         <div class="sub">Low-poly browser F1 racer</div>
@@ -272,7 +345,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <div class="links-row"><a href="https://github.com/Adiiiiiiiiiiithegoat/formula-0.1" target="_blank" rel="noopener">Code ↗</a></div>
       </article>
 
-      <article class="card reveal">
+      <article class="card spot reveal">
         <span class="badge">Built for E-Cell NITK Tech Team recruitment</span>
         <h3>SuperChromatic</h3>
         <div class="sub">Image-based theming engine</div>
@@ -313,11 +386,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   <!-- RECOGNITION -->
   <section id="recognition">
     <div class="sec-head"><h2>Recognition</h2><span class="mono">03</span></div>
-    <div class="award reveal">
+    <div class="award gold reveal">
       <span class="mono">2026</span>
       <div><b>Winner, USAII Global AI Hackathon</b><span>Undergraduate track, with HAVEN. Awarded a full scholarship to the CAIE™ Certified AI Engineer program.</span></div>
     </div>
-    <div class="award reveal">
+    <div class="award violet reveal">
       <span class="mono">2026</span>
       <div><b>Finalist, Smart India Hackathon</b><span>With NETRA, as part of a six-person team.</span></div>
     </div>
@@ -331,14 +404,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   <section id="stack">
     <div class="sec-head"><h2>What I work with</h2><span class="mono">04</span></div>
     <div class="stack reveal">
-      <div><h3>Languages &amp; web</h3><div class="chips"><span class="chip">Python</span><span class="chip">TypeScript</span><span class="chip">JavaScript</span><span class="chip">React</span><span class="chip">Next.js</span><span class="chip">Three.js</span><span class="chip">Flask</span><span class="chip">Express</span></div></div>
-      <div><h3>Automation &amp; AI</h3><div class="chips"><span class="chip">Playwright</span><span class="chip">OCR</span><span class="chip">RAG</span><span class="chip">LLM APIs</span><span class="chip">OpenCV</span><span class="chip">MediaPipe</span><span class="chip">Claude Code</span></div></div>
-      <div><h3>Data &amp; infra</h3><div class="chips"><span class="chip">pandas</span><span class="chip">SQLite</span><span class="chip">OSMnx</span><span class="chip">Git</span><span class="chip">Vercel</span><span class="chip">Docker</span></div></div>
+      <div class="spot"><h3>Languages &amp; web</h3><div class="chips"><span class="chip">Python</span><span class="chip">TypeScript</span><span class="chip">JavaScript</span><span class="chip">React</span><span class="chip">Next.js</span><span class="chip">Three.js</span><span class="chip">Flask</span><span class="chip">Express</span></div></div>
+      <div class="spot"><h3>Automation &amp; AI</h3><div class="chips"><span class="chip">Playwright</span><span class="chip">OCR</span><span class="chip">RAG</span><span class="chip">LLM APIs</span><span class="chip">OpenCV</span><span class="chip">MediaPipe</span><span class="chip">Claude Code</span></div></div>
+      <div class="spot"><h3>Data &amp; infra</h3><div class="chips"><span class="chip">pandas</span><span class="chip">SQLite</span><span class="chip">OSMnx</span><span class="chip">Git</span><span class="chip">Vercel</span><span class="chip">Docker</span></div></div>
     </div>
   </section>
 
   <section class="contact" id="contact">
-    <h2>Let's build something.</h2>
+    <h2>Let's build <span class="grad">something.</span></h2>
     <p>Open to internships and interesting projects. The fastest way to reach me is email.</p>
     <div class="cta">
       <a class="btn primary" href="mailto:adityaranjith08@gmail.com">adityaranjith08@gmail.com</a>
@@ -356,18 +429,24 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 <script>
 (function(){
-  var root=document.documentElement;
+  var root=document.documentElement, meta=document.getElementById('themeColor');
   document.getElementById('themeToggle').addEventListener('click',function(){
-    var cur=root.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
-    var next=cur==='dark'?'light':'dark';
-    root.setAttribute('data-theme',next);
+    var next=root.getAttribute('data-theme')==='light'?'dark':'light';
+    if(next==='light')root.setAttribute('data-theme','light');else root.removeAttribute('data-theme');
+    meta.content=next==='light'?'#fafaf8':'#0a0a0b';
     try{localStorage.setItem('theme',next);}catch(e){}
   });
   document.getElementById('yr').textContent=new Date().getFullYear();
   var header=document.querySelector('header');
   addEventListener('scroll',function(){header.classList.toggle('scrolled',scrollY>8);},{passive:true});
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  // stagger reveals that enter together; clear the delay afterwards so hovers stay instant
+  var io=new IntersectionObserver(function(es){var n=0;es.forEach(function(e){if(!e.isIntersecting)return;var el=e.target;
+    el.style.transitionDelay=(n++*70)+'ms';el.classList.add('in');io.unobserve(el);
+    setTimeout(function(){el.style.transitionDelay='';},700+n*70);});},{threshold:.12});
   document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+  document.querySelectorAll('.spot').forEach(function(el){
+    el.addEventListener('pointermove',function(e){var r=el.getBoundingClientRect();el.style.setProperty('--x',(e.clientX-r.left)+'px');el.style.setProperty('--y',(e.clientY-r.top)+'px');});
+  });
 })();
 </script>
 </body>

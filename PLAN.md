@@ -22,3 +22,11 @@
 - [x] Connect GitHub repo for auto-deploys
 - [x] Fill canonical/og:url with production URL, push, redeploy
 - [x] Verify live site (curl + screenshots)
+
+## Liven up (v2)
+- [x] Tameen time: 10–15 min → 6–8 min (stat, job, project card)
+- [x] Dark by default, toggle kept
+- [x] Hero glow, dot grid, gradient headline, status pill
+- [x] Coloured badges/stats, card spotlight, featured HAVEN card
+- [x] Scroll progress bar, staggered reveals, contact glow
+- [x] Contrast + responsive re-check, deploy
