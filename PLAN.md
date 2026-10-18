@@ -21,4 +21,4 @@
 - [x] Link Vercel project and deploy to production
 - [x] Connect GitHub repo for auto-deploys
 - [x] Fill canonical/og:url with production URL, push, redeploy
-- [ ] Verify live site (curl + screenshots)
+- [x] Verify live site (curl + screenshots)
