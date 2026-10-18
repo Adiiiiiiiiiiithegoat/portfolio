@@ -2,7 +2,7 @@
 
 Personal developer portfolio. A single static `index.html`: plain HTML/CSS/JS, no framework, no build step. Vercel serves it as-is.
 
-Live: __SITE_URL__
+Live: https://aditya-ranjith.vercel.app
 
 ## What's in the repo
 

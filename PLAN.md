@@ -15,10 +15,10 @@
 
 ## GitHub
 - [x] git init + first commit
-- [ ] Create public repo and push
+- [x] Create public repo and push
 
 ## Deploy
-- [ ] Link Vercel project and deploy to production
-- [ ] Connect GitHub repo for auto-deploys
-- [ ] Fill canonical/og:url with production URL, push, redeploy
+- [x] Link Vercel project and deploy to production
+- [x] Connect GitHub repo for auto-deploys
+- [x] Fill canonical/og:url with production URL, push, redeploy
 - [ ] Verify live site (curl + screenshots)
