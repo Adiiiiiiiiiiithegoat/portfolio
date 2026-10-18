@@ -141,7 +141,7 @@ section{padding:88px 0 0}
 .job li::before{content:"";position:absolute;left:0;top:11px;width:8px;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--accent),var(--violet))}
 .job li strong{color:var(--text);font-weight:500}
 .job .link{display:inline-block;margin-top:14px;font-size:14px;color:var(--accent)}
-.job .link:hover,.row a:hover{text-decoration:underline;text-underline-offset:3px}
+.job .link:hover{text-decoration:underline;text-underline-offset:3px}
 
 /* projects */
 .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
@@ -171,14 +171,7 @@ section{padding:88px 0 0}
 
 /* more projects */
 .more{margin-top:48px}
-.more h3.label{margin-bottom:8px}
-.row{display:grid;grid-template-columns:220px 1fr auto;gap:24px;align-items:baseline;padding:18px 0;border-top:1px solid var(--line)}
-.row:last-child{border-bottom:1px solid var(--line)}
-.row b{font-weight:600;font-size:15.5px;transition:color .2s}
-.row:hover b{color:var(--accent)}
-.row span{color:var(--muted);font-size:15px}
-.row a{font-size:14px;color:var(--accent);white-space:nowrap}
-.row .private{font-size:14px;color:var(--muted)}
+.more h3.label{margin-bottom:16px}
 
 /* recognition */
 .award{display:grid;grid-template-columns:120px 1fr;gap:24px;padding:20px 0;border-top:1px solid var(--line)}
@@ -224,8 +217,7 @@ footer a:hover{color:var(--text)}
   .job,.award{grid-template-columns:1fr;gap:10px}
   .grid,.stack{grid-template-columns:1fr}
   .card.wide{grid-column:auto}
-  .row{grid-template-columns:1fr;gap:4px}
-}
+  }
 </style>
 </head>
 <body>
@@ -281,8 +273,6 @@ footer a:hover{color:var(--text)}
         <ul>
           <li>Built the <strong>motor insurance policy automation</strong> that connects the Tameen broker portal to multiple insurer portals with Playwright, cutting processing from <strong>6–8 minutes to under a minute</strong> per policy.</li>
           <li>Shipped a <strong>Flask web interface</strong> so non-technical staff could run it, with auto-updating installs on every employee machine.</li>
-          <li>Built an <strong>Arabic/English OCR pipeline</strong> (RapidOCR / PaddleOCR) that reads vehicle registration cards and driving licences, running in parallel with portal navigation so it adds no time.</li>
-          <li>QA-tested the vehicle photo damage-detection system and documented its false positives and missed fraud cases before go-live.</li>
         </ul>
       </div>
     </div>
@@ -331,8 +321,8 @@ footer a:hover{color:var(--text)}
         <span class="badge green">In production</span>
         <h3>Insurance Automation</h3>
         <div class="sub">Broker-to-insurer policy pipeline</div>
-        <p>The system behind my Tameen work: Playwright scripts that fill insurer portals automatically, OCR on Arabic/English documents and a Flask UI with live progress for staff. Policies go from <strong>6–8 minutes to under one</strong>.</p>
-        <div class="chips"><span class="chip">Python</span><span class="chip">Playwright</span><span class="chip">Flask</span><span class="chip">RapidOCR</span></div>
+        <p>The system behind my Tameen work: Playwright scripts that fill insurer portals automatically and a Flask UI with live progress for staff. Policies go from <strong>6–8 minutes to under one</strong>.</p>
+        <div class="chips"><span class="chip">Python</span><span class="chip">Playwright</span><span class="chip">Flask</span></div>
         <div class="links-row"><a href="https://github.com/Adiiiiiiiiiiithegoat/insurance-automation" target="_blank" rel="noopener">Code ↗</a></div>
       </article>
 
@@ -360,25 +350,27 @@ footer a:hover{color:var(--text)}
 
     <div class="more">
       <h3 class="label mono">More projects</h3>
-      <div class="row reveal">
-        <b>Inventory &amp; Stock Tracker</b>
-        <span>Full-stack tracker with agentic AI. Got me selected for the 180 Degrees Consulting NITK Tech Team.</span>
-        <a href="https://github.com/Adiiiiiiiiiiithegoat/180DC-project" target="_blank" rel="noopener">Code ↗</a>
-      </div>
-      <div class="row reveal">
-        <b>Handyman</b>
-        <span>Controls Windows with ten webcam hand gestures (media, apps, folders, browser tabs), all remappable from one config file.</span>
-        <a href="https://github.com/Adiiiiiiiiiiithegoat/Handyman" target="_blank" rel="noopener">Code ↗</a>
-      </div>
-      <div class="row reveal">
-        <b>T.Analytics</b>
-        <span>Consulting-style analysis of ~18,000 motor insurance leads and policies, with a one-command pipeline that rebuilds every table and chart when new data lands.</span>
-        <span class="private">Private</span>
-      </div>
-      <div class="row reveal">
-        <b>Insurance Agent</b>
-        <span>Pulls values from a policy PDF and uses RAG over other policies to answer questions about motor and life insurance.</span>
-        <a href="https://github.com/Adiiiiiiiiiiithegoat/Insurance-Agent" target="_blank" rel="noopener">Code ↗</a>
+      <div class="grid">
+        <article class="card spot reveal">
+          <h3>Inventory &amp; Stock Tracker</h3>
+          <p>Full-stack tracker with agentic AI. Got me selected for the 180 Degrees Consulting NITK Tech Team.</p>
+          <div class="links-row"><a href="https://github.com/Adiiiiiiiiiiithegoat/180DC-project" target="_blank" rel="noopener">Code ↗</a></div>
+        </article>
+        <article class="card spot reveal">
+          <h3>Handyman</h3>
+          <p>Controls Windows with ten webcam hand gestures (media, apps, folders, browser tabs), all remappable from one config file.</p>
+          <div class="links-row"><a href="https://github.com/Adiiiiiiiiiiithegoat/Handyman" target="_blank" rel="noopener">Code ↗</a></div>
+        </article>
+        <article class="card spot reveal">
+          <h3>T.Analytics</h3>
+          <p>Consulting-style analysis of ~18,000 motor insurance leads and policies, with a one-command pipeline that rebuilds every table and chart when new data lands.</p>
+          <div class="links-row"><span class="private">Private</span></div>
+        </article>
+        <article class="card spot reveal">
+          <h3>Insurance Agent</h3>
+          <p>Pulls values from a policy PDF and uses RAG over other policies to answer questions about motor and life insurance.</p>
+          <div class="links-row"><a href="https://github.com/Adiiiiiiiiiiithegoat/Insurance-Agent" target="_blank" rel="noopener">Code ↗</a></div>
+        </article>
       </div>
     </div>
   </section>
