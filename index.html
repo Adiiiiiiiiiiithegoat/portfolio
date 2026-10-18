@@ -92,10 +92,6 @@ nav{display:flex;align-items:center;justify-content:space-between;height:60px}
 
 /* hero */
 .hero{padding:88px 0 72px}
-.status{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--text);padding:5px 12px 5px 10px;border:1px solid var(--line);border-radius:999px;background:color-mix(in srgb,var(--surface) 70%,transparent);margin-bottom:22px;transition:border-color .2s}
-.status:hover{border-color:color-mix(in srgb,var(--green) 50%,var(--line))}
-.dot{width:7px;height:7px;border-radius:50%;background:var(--green);animation:pulse 2.2s ease-out infinite}
-@keyframes pulse{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--green) 60%,transparent)}100%{box-shadow:0 0 0 9px transparent}}
 .hero h1{font-size:clamp(44px,8vw,76px);line-height:1;letter-spacing:-.045em;font-weight:700;margin:18px 0 24px}
 .grad{background:linear-gradient(90deg,var(--accent),var(--violet),var(--teal),var(--accent));background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shimmer 10s linear infinite}
 @keyframes shimmer{to{background-position:300% 0}}
@@ -206,7 +202,7 @@ footer a:hover{color:var(--text)}
 @media (prefers-reduced-motion:reduce){
   .reveal,.card.reveal{opacity:1;transform:none;transition:none}
   html{scroll-behavior:auto}
-  .aurora i,.grad,.dot{animation:none}
+  .aurora i,.grad{animation:none}
 }
 
 @media (max-width:1000px){.stats{grid-template-columns:repeat(2,1fr)}}
@@ -245,7 +241,6 @@ footer a:hover{color:var(--text)}
 <main class="wrap">
 
   <div class="hero">
-    <a class="status" href="#contact"><span class="dot" aria-hidden="true"></span>Open to internships</a>
     <div class="mono">Developer · Mechanical Engineering @ NITK Surathkal · Oman / India</div>
     <h1>I build <span class="grad">automation, AI tools</span> and web apps.</h1>
     <p class="lead">From an <strong>insurance pipeline running in production</strong> to a <strong>hackathon-winning legal aid tool</strong>, I build software that takes real work off people's hands.</p>
