@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aditya Ranjith — Developer</title>
+<meta name="description" content="Aditya Ranjith builds automation, AI tools and web apps. Winner of the USAII Global AI Hackathon 2026, Smart India Hackathon 2026 finalist.">
+<meta property="og:title" content="Aditya Ranjith — Developer">
+<meta property="og:description" content="Automation, AI tools and web apps. USAII Global AI Hackathon winner, SIH 2026 finalist.">
+<meta property="og:type" content="website">
+<link rel="canonical" href="__SITE_URL__/">
+<meta property="og:url" content="__SITE_URL__/">
+<meta property="og:image" content="__SITE_URL__/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Aditya Ranjith — Developer. USAII Global AI Hackathon winner · SIH 2026 finalist">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Aditya Ranjith — Developer">
+<meta name="twitter:description" content="Automation, AI tools and web apps. USAII Global AI Hackathon winner, SIH 2026 finalist.">
+<meta name="twitter:image" content="__SITE_URL__/og.png">
+<meta name="theme-color" content="#fafaf8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e0e0d" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232f5bea'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='system-ui,-apple-system,Segoe UI,sans-serif' font-size='30' font-weight='700' letter-spacing='-1' fill='%23fff'%3EAR%3C/text%3E%3C/svg%3E">
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fafaf8; --surface:#ffffff; --text:#111110; --muted:#6b6a66; --faint:#a3a19b;
+  --line:#e6e4df; --accent:#2f5bea; --accent-soft:#eef2fe; --chip:#f2f1ed;
+  --sans:"Inter Tight",system-ui,-apple-system,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0e0e0d; --surface:#161615; --text:#ecebe7; --muted:#9a9891; --faint:#62605b;
+    --line:#262624; --accent:#7d9bff; --accent-soft:#1a2140; --chip:#1e1e1c;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0e0e0d; --surface:#161615; --text:#ecebe7; --muted:#9a9891; --faint:#62605b;
+  --line:#262624; --accent:#7d9bff; --accent-soft:#1a2140; --chip:#1e1e1c;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px}
+.mono{font-family:var(--mono);font-size:12.5px;letter-spacing:.02em;color:var(--muted)}
+
+/* nav */
+header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .2s}
+header.scrolled{border-bottom-color:var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-weight:700;letter-spacing:-.02em}
+.links{display:flex;gap:24px;align-items:center}
+.links a{font-size:14px;color:var(--muted);transition:color .15s}
+.links a:hover{color:var(--text)}
+.toggle{background:none;border:1px solid var(--line);border-radius:8px;width:32px;height:32px;cursor:pointer;color:var(--muted);display:grid;place-items:center}
+.toggle:hover{color:var(--text)}
+
+/* hero */
+.hero{padding:96px 0 72px}
+.hero h1{font-size:clamp(44px,8vw,76px);line-height:1;letter-spacing:-.045em;font-weight:700;margin:18px 0 24px}
+.hero p.lead{font-size:clamp(18px,2.4vw,21px);color:var(--muted);max-width:620px;line-height:1.5}
+.hero p.lead strong{color:var(--text);font-weight:500}
+.cta{display:flex;gap:12px;margin-top:36px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:10px;font-size:14.5px;font-weight:500;border:1px solid var(--line);background:var(--surface);transition:transform .15s,border-color .15s}
+.btn:hover{transform:translateY(-1px);border-color:var(--text)}
+.btn.primary{background:var(--text);color:var(--bg);border-color:var(--text)}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden}
+.stat{padding:22px 24px;border-right:1px solid var(--line)}
+.stat:last-child{border-right:none}
+.stat b{display:block;font-size:17px;font-weight:600;letter-spacing:-.01em;margin-bottom:4px}
+.stat span{font-size:14px;color:var(--muted)}
+
+/* sections */
+section{padding:88px 0 0}
+.sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:32px}
+.sec-head h2{font-size:26px;letter-spacing:-.03em;font-weight:600}
+
+/* experience */
+.job{display:grid;grid-template-columns:220px 1fr;gap:32px;padding:28px 0;border-top:1px solid var(--line)}
+.job:last-child{border-bottom:1px solid var(--line)}
+.job h3{font-size:17px;font-weight:600;letter-spacing:-.01em}
+.job .role{color:var(--muted);font-size:14.5px;margin-top:2px}
+.job ul{list-style:none;display:grid;gap:10px}
+.job li{position:relative;padding-left:18px;color:var(--muted)}
+.job li::before{content:"";position:absolute;left:0;top:11px;width:6px;height:1px;background:var(--faint)}
+.job li strong{color:var(--text);font-weight:500}
+.job .link{display:inline-block;margin-top:14px;font-size:14px;color:var(--accent)}
+
+/* projects */
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:26px;display:flex;flex-direction:column;transition:border-color .2s,transform .2s}
+.card:hover{border-color:color-mix(in srgb,var(--text) 35%,var(--line));transform:translateY(-2px)}
+.card.wide{grid-column:span 2}
+.badge{align-self:flex-start;font-family:var(--mono);font-size:11.5px;padding:4px 9px;border-radius:13px;background:var(--accent-soft);color:var(--accent);margin-bottom:16px}
+.card h3{font-size:21px;letter-spacing:-.025em;font-weight:600}
+.card .sub{font-size:14.5px;color:var(--muted);margin-top:2px}
+.card p{color:var(--muted);margin-top:14px;font-size:15px}
+.card p strong{color:var(--text);font-weight:500}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:18px}
+.chip{font-family:var(--mono);font-size:11.5px;padding:3px 8px;border-radius:6px;background:var(--chip);color:var(--muted)}
+.card .links-row{display:flex;gap:18px;margin-top:auto;padding-top:20px;font-size:14px}
+.card .links-row a{color:var(--accent)}
+.card .links-row a:hover{text-decoration:underline;text-underline-offset:3px}
+.card .links-row .private{color:var(--muted)}
+
+/* more projects */
+.more{margin-top:48px}
+.more h3.label{margin-bottom:8px}
+.row{display:grid;grid-template-columns:220px 1fr auto;gap:24px;align-items:baseline;padding:18px 0;border-top:1px solid var(--line)}
+.row:last-child{border-bottom:1px solid var(--line)}
+.row b{font-weight:600;font-size:15.5px}
+.row span{color:var(--muted);font-size:15px}
+.row a{font-size:14px;color:var(--accent);white-space:nowrap}
+.row .private{font-size:14px;color:var(--muted)}
+
+/* recognition */
+.award{display:grid;grid-template-columns:120px 1fr;gap:24px;padding:20px 0;border-top:1px solid var(--line)}
+.award:last-child{border-bottom:1px solid var(--line)}
+.award b{font-weight:600}
+.award span{display:block;color:var(--muted);font-size:15px;margin-top:2px}
+
+/* stack */
+.stack{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.stack > div{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px}
+.stack h3{font-size:14px;font-weight:600;margin-bottom:12px}
+
+/* contact */
+.contact{padding:112px 0 64px;text-align:center}
+.contact h2{font-size:clamp(32px,5vw,44px);letter-spacing:-.035em;font-weight:600}
+.contact p{color:var(--muted);margin:12px auto 28px;max-width:440px}
+.contact .cta{justify-content:center}
+footer{border-top:1px solid var(--line);padding:24px 0 40px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+.reveal{opacity:0;transform:translateY(12px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+@media (max-width:760px){
+  .wrap{padding:0 16px}
+  .links a{display:none}
+  .hero{padding:64px 0 48px}
+  .stats{grid-template-columns:1fr}
+  .stat{border-right:none;border-bottom:1px solid var(--line)}
+  .stat:last-child{border-bottom:none}
+  section{padding-top:64px}
+  .job,.award{grid-template-columns:1fr;gap:10px}
+  .grid,.stack{grid-template-columns:1fr}
+  .card.wide{grid-column:auto}
+  .row{grid-template-columns:1fr;gap:4px}
+}
+</style>
+</head>
+<body>
+
+<header id="top">
+  <nav class="wrap">
+    <a href="#" class="logo">Aditya Ranjith</a>
+    <div class="links">
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#recognition">Recognition</a>
+      <a href="#contact">Contact</a>
+      <button class="toggle" id="themeToggle" aria-label="Toggle colour theme">
+        <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<main class="wrap">
+
+  <div class="hero">
+    <div class="mono">Developer · Mechanical Engineering @ NITK Surathkal · Oman / India</div>
+    <h1>I build automation, AI tools and web apps.</h1>
+    <p class="lead">From an <strong>insurance pipeline running in production</strong> to a <strong>hackathon-winning legal aid tool</strong>, I build software that takes real work off people's hands.</p>
+    <div class="cta">
+      <a class="btn primary" href="#projects">See projects</a>
+      <a class="btn" href="https://github.com/Adiiiiiiiiiiithegoat" target="_blank" rel="noopener">GitHub ↗</a>
+      <a class="btn" href="mailto:adityaranjith08@gmail.com">Email</a>
+    </div>
+  </div>
+
+  <div class="stats reveal">
+    <div class="stat"><b>Winner</b><span>USAII Global AI Hackathon 2026</span></div>
+    <div class="stat"><b>Finalist</b><span>Smart India Hackathon 2026</span></div>
+    <div class="stat"><b>10–15 min → &lt;1 min</b><span>Policy processing time at Tameen</span></div>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="sec-head"><h2>Experience</h2><span class="mono">01</span></div>
+
+    <div class="job reveal">
+      <div>
+        <h3>Tameen</h3>
+        <div class="role">Developer Intern · Oman</div>
+      </div>
+      <div>
+        <ul>
+          <li>Built the <strong>motor insurance policy automation</strong> that connects the Tameen broker portal to multiple insurer portals with Playwright, cutting processing from <strong>10–15 minutes to under a minute</strong> per policy.</li>
+          <li>Shipped a <strong>Flask web interface</strong> so non-technical staff could run it, with auto-updating installs on every employee machine.</li>
+          <li>Built an <strong>Arabic/English OCR pipeline</strong> (RapidOCR / PaddleOCR) that reads vehicle registration cards and driving licences, running in parallel with portal navigation so it adds no time.</li>
+          <li>QA-tested the vehicle photo damage-detection system and documented its false positives and missed fraud cases before go-live.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job reveal">
+      <div>
+        <h3>Tema Gulf Heavy Engineering</h3>
+        <div class="role">Freelance Web Developer · Oman</div>
+      </div>
+      <div>
+        <ul>
+          <li>Designed and shipped the <strong>company's production website</strong> end to end, from layout and content to deployment on the client's own domain.</li>
+        </ul>
+        <a class="link" href="https://tema-gulf.vercel.app" target="_blank" rel="noopener">View site ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="sec-head"><h2>Selected projects</h2><span class="mono">02</span></div>
+
+    <div class="grid">
+      <article class="card wide reveal">
+        <span class="badge">Winner · USAII Global AI Hackathon 2026</span>
+        <h3>HAVEN</h3>
+        <div class="sub">Housing Advice, Validation &amp; Eviction Navigator</div>
+        <p>An AI tool for renters in England facing eviction under the new Renters' Rights Act. It checks whether a notice is valid, runs the <strong>56-day council-duty clock</strong>, builds a 48-hour action plan and drafts letters to the council. Deadline maths runs in code, not in the model, and every answer stays grounded in the post-reform law.</p>
+        <div class="chips"><span class="chip">React</span><span class="chip">Vite</span><span class="chip">Express</span><span class="chip">Llama 3.3 70B (Groq)</span><span class="chip">Vercel</span></div>
+        <div class="links-row">
+          <a href="https://haven-kappa-tan.vercel.app" target="_blank" rel="noopener">Live ↗</a>
+          <a href="https://github.com/Adiiiiiiiiiiithegoat/haven" target="_blank" rel="noopener">Code ↗</a>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <span class="badge">Finalist · Smart India Hackathon 2026</span>
+        <h3>NETRA</h3>
+        <div class="sub">Disaster damage prioritisation</div>
+        <p>Classifies road and building damage from citizen photos, maps it onto the real road network and ranks reports by <strong>who loses hospital access</strong>, not just detection confidence. Hit <strong>0.988 rank correlation</strong> vs 0.576 for the naive approach. Built the full technical side in a 24-hour sprint.</p>
+        <div class="chips"><span class="chip">Python</span><span class="chip">OSMnx</span><span class="chip">WorldPop</span><span class="chip">Vision API</span><span class="chip">Leaflet</span></div>
+        <div class="links-row"><a href="https://github.com/Adiiiiiiiiiiithegoat/SIH" target="_blank" rel="noopener">Code ↗</a></div>
+      </article>
+
+      <article class="card reveal">
+        <span class="badge">In production</span>
+        <h3>Insurance Automation</h3>
+        <div class="sub">Broker-to-insurer policy pipeline</div>
+        <p>The system behind my Tameen work: Playwright scripts that fill insurer portals automatically, OCR on Arabic/English documents and a Flask UI with live progress for staff. Policies go from <strong>10–15 minutes to under one</strong>.</p>
+        <div class="chips"><span class="chip">Python</span><span class="chip">Playwright</span><span class="chip">Flask</span><span class="chip">RapidOCR</span></div>
+        <div class="links-row"><a href="https://github.com/Adiiiiiiiiiiithegoat/insurance-automation" target="_blank" rel="noopener">Code ↗</a></div>
+      </article>
+
+      <article class="card reveal">
+        <span class="badge">Game</span>
+        <h3>Formula 0.1</h3>
+        <div class="sub">Low-poly browser F1 racer</div>
+        <p>Seven real circuits recreated <strong>1:1 from OpenStreetMap geometry</strong>, with Time Trial and a full Grand Prix weekend: practice, one-lap qualifying and race. Three.js and vanilla JS, no build step, no backend.</p>
+        <div class="chips"><span class="chip">Three.js</span><span class="chip">JavaScript</span><span class="chip">WebGL</span><span class="chip">OpenStreetMap</span></div>
+        <div class="links-row"><a href="https://github.com/Adiiiiiiiiiiithegoat/formula-0.1" target="_blank" rel="noopener">Code ↗</a></div>
+      </article>
+
+      <article class="card reveal">
+        <span class="badge">Built for E-Cell NITK Tech Team recruitment</span>
+        <h3>SuperChromatic</h3>
+        <div class="sub">Image-based theming engine</div>
+        <p>Drop in a wallpaper and get a <strong>full design-system theme</strong> with live preview. It extracts a palette, builds the theme in OKLCH and auto-fixes contrast to meet <strong>WCAG accessibility</strong> standards.</p>
+        <div class="chips"><span class="chip">TypeScript</span><span class="chip">OKLCH</span><span class="chip">WCAG</span><span class="chip">Vercel</span></div>
+        <div class="links-row">
+          <a href="https://superchromatic.vercel.app" target="_blank" rel="noopener">Live ↗</a>
+          <a href="https://github.com/Adiiiiiiiiiiithegoat/superchromatic" target="_blank" rel="noopener">Code ↗</a>
+        </div>
+      </article>
+    </div>
+
+    <div class="more">
+      <h3 class="label mono">More projects</h3>
+      <div class="row reveal">
+        <b>Inventory &amp; Stock Tracker</b>
+        <span>Full-stack tracker with agentic AI. Got me selected for the 180 Degrees Consulting NITK Tech Team.</span>
+        <a href="https://github.com/Adiiiiiiiiiiithegoat/180DC-project" target="_blank" rel="noopener">Code ↗</a>
+      </div>
+      <div class="row reveal">
+        <b>Handyman</b>
+        <span>Controls Windows with ten webcam hand gestures (media, apps, folders, browser tabs), all remappable from one config file.</span>
+        <a href="https://github.com/Adiiiiiiiiiiithegoat/Handyman" target="_blank" rel="noopener">Code ↗</a>
+      </div>
+      <div class="row reveal">
+        <b>T.Analytics</b>
+        <span>Consulting-style analysis of ~18,000 motor insurance leads and policies, with a one-command pipeline that rebuilds every table and chart when new data lands.</span>
+        <span class="private">Private</span>
+      </div>
+      <div class="row reveal">
+        <b>Insurance Agent</b>
+        <span>Pulls values from a policy PDF and uses RAG over other policies to answer questions about motor and life insurance.</span>
+        <a href="https://github.com/Adiiiiiiiiiiithegoat/Insurance-Agent" target="_blank" rel="noopener">Code ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECOGNITION -->
+  <section id="recognition">
+    <div class="sec-head"><h2>Recognition</h2><span class="mono">03</span></div>
+    <div class="award reveal">
+      <span class="mono">2026</span>
+      <div><b>Winner, USAII Global AI Hackathon</b><span>Undergraduate track, with HAVEN. Awarded a full scholarship to the CAIE™ Certified AI Engineer program.</span></div>
+    </div>
+    <div class="award reveal">
+      <span class="mono">2026</span>
+      <div><b>Finalist, Smart India Hackathon</b><span>With NETRA, as part of a six-person team.</span></div>
+    </div>
+    <div class="award reveal">
+      <span class="mono">2026</span>
+      <div><b>Selected, 180 Degrees Consulting NITK Tech Team</b><span>Developer track.</span></div>
+    </div>
+  </section>
+
+  <!-- STACK -->
+  <section id="stack">
+    <div class="sec-head"><h2>What I work with</h2><span class="mono">04</span></div>
+    <div class="stack reveal">
+      <div><h3>Languages &amp; web</h3><div class="chips"><span class="chip">Python</span><span class="chip">TypeScript</span><span class="chip">JavaScript</span><span class="chip">React</span><span class="chip">Next.js</span><span class="chip">Three.js</span><span class="chip">Flask</span><span class="chip">Express</span></div></div>
+      <div><h3>Automation &amp; AI</h3><div class="chips"><span class="chip">Playwright</span><span class="chip">OCR</span><span class="chip">RAG</span><span class="chip">LLM APIs</span><span class="chip">OpenCV</span><span class="chip">MediaPipe</span><span class="chip">Claude Code</span></div></div>
+      <div><h3>Data &amp; infra</h3><div class="chips"><span class="chip">pandas</span><span class="chip">SQLite</span><span class="chip">OSMnx</span><span class="chip">Git</span><span class="chip">Vercel</span><span class="chip">Docker</span></div></div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>Let's build something.</h2>
+    <p>Open to internships and interesting projects. The fastest way to reach me is email.</p>
+    <div class="cta">
+      <a class="btn primary" href="mailto:adityaranjith08@gmail.com">adityaranjith08@gmail.com</a>
+      <a class="btn" href="https://github.com/Adiiiiiiiiiiithegoat" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap mono">
+    <span>© <span id="yr"></span> Aditya Ranjith</span>
+    <a href="#top">Back to top ↑</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  document.getElementById('themeToggle').addEventListener('click',function(){
+    var cur=root.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
+    var next=cur==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('theme',next);}catch(e){}
+  });
+  document.getElementById('yr').textContent=new Date().getFullYear();
+  var header=document.querySelector('header');
+  addEventListener('scroll',function(){header.classList.toggle('scrolled',scrollY>8);},{passive:true});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+})();
+</script>
+</body>
+</html>
