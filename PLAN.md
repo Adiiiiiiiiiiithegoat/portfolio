@@ -30,3 +30,8 @@
 - [x] Coloured badges/stats, card spotlight, featured HAVEN card
 - [x] Scroll progress bar, staggered reveals, contact glow
 - [x] Contrast + responsive re-check, deploy
+
+## 180DC emphasis
+- [x] Hero stat for 180DC NITK selection (teal)
+- [x] Inventory & Stock Tracker promoted to a wide Selected card with 180DC badge
+- [x] More projects as a 3-up row; teal 180DC award marker

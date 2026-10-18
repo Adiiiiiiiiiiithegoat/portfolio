@@ -33,7 +33,7 @@
   --violet:#c4a5ff; --violet-soft:#221a36;
   --gold:#f2c46d; --gold-soft:#2a2314;
   --green:#6ee7a0; --green-soft:#11281c;
-  --teal:#6ee7d0;
+  --teal:#6ee7d0; --teal-soft:#0f2724;
   --glow-1:rgba(79,108,255,.32); --glow-2:rgba(160,100,255,.22); --glow-3:rgba(60,220,200,.12);
   --dots:rgba(255,255,255,.07);
   --sans:"Inter Tight",system-ui,-apple-system,sans-serif;
@@ -47,7 +47,7 @@
   --violet:#6b35d6; --violet-soft:#f1eafe;
   --gold:#7a4f00; --gold-soft:#fbf0d9;
   --green:#146c34; --green-soft:#e5f5ea;
-  --teal:#0f766e;
+  --teal:#0f766e; --teal-soft:#e0f4f1;
   --glow-1:rgba(47,91,234,.14); --glow-2:rgba(124,58,237,.10); --glow-3:rgba(15,118,110,.07);
   --dots:rgba(0,0,0,.07);
   color-scheme:light;
@@ -115,14 +115,14 @@ nav{display:flex;align-items:center;justify-content:space-between;height:60px}
 .spot > *{position:relative}
 
 /* stats */
-.stats{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden}
-.stat{padding:22px 24px;border-right:1px solid var(--line)}
-.stat:last-child{border-right:none}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;border:1px solid var(--line);border-radius:14px;background:var(--line);overflow:hidden}
+.stat{padding:22px 24px;background:var(--surface)}
 .stat b{display:block;font-size:17px;font-weight:600;letter-spacing:-.01em;margin-bottom:4px}
 .stat span{font-size:14px;color:var(--muted)}
 .stat.gold{--glow:var(--gold)} .stat.gold b{color:var(--gold)}
 .stat.violet{--glow:var(--violet)} .stat.violet b{color:var(--violet)}
 .stat.green{--glow:var(--green)} .stat.green b{color:var(--green)}
+.stat.teal{--glow:var(--teal)} .stat.teal b{color:var(--teal)}
 
 /* sections */
 section{padding:88px 0 0}
@@ -149,6 +149,7 @@ section{padding:88px 0 0}
 .card.reveal{transition:opacity .6s ease,transform .3s ease,border-color .2s,box-shadow .2s}
 .card:hover{border-color:color-mix(in srgb,var(--glow,var(--accent)) 45%,var(--line));transform:translateY(-3px);box-shadow:0 18px 40px -24px color-mix(in srgb,var(--glow,var(--accent)) 60%,transparent)}
 .card.wide{grid-column:span 2}
+.grid.three{grid-template-columns:repeat(3,1fr)}
 /* the hackathon winner gets a gradient border */
 .card.feature{--glow:var(--gold);border-color:transparent;background:linear-gradient(var(--surface),var(--surface)) padding-box,linear-gradient(120deg,var(--gold),var(--violet) 45%,var(--accent)) border-box}
 .card.feature:hover{border-color:transparent}
@@ -157,6 +158,8 @@ section{padding:88px 0 0}
 .badge.gold{background:var(--gold-soft);color:var(--gold)}
 .badge.violet{background:var(--violet-soft);color:var(--violet)}
 .badge.green{background:var(--green-soft);color:var(--green)}
+.badge.teal{background:var(--teal-soft);color:var(--teal)}
+.card.t{--glow:var(--teal);border-color:color-mix(in srgb,var(--teal) 35%,var(--line))}
 .card h3{font-size:21px;letter-spacing:-.025em;font-weight:600}
 .card .sub{font-size:14.5px;color:var(--muted);margin-top:2px}
 .card p{color:var(--muted);margin-top:14px;font-size:15px}
@@ -179,7 +182,7 @@ section{padding:88px 0 0}
 .award b{font-weight:600}
 .award span{display:block;color:var(--muted);font-size:15px;margin-top:2px}
 .award .mono::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:10px;vertical-align:1px;background:var(--c,var(--accent))}
-.award.gold{--c:var(--gold)} .award.violet{--c:var(--violet)}
+.award.gold{--c:var(--gold)} .award.violet{--c:var(--violet)} .award.teal{--c:var(--teal)}
 
 /* stack */
 .stack{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
@@ -206,16 +209,15 @@ footer a:hover{color:var(--text)}
   .aurora i,.grad,.dot{animation:none}
 }
 
+@media (max-width:1000px){.stats{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:760px){
   .wrap{padding:0 16px}
   .links a{display:none}
   .hero{padding:56px 0 48px}
   .stats{grid-template-columns:1fr}
-  .stat{border-right:none;border-bottom:1px solid var(--line)}
-  .stat:last-child{border-bottom:none}
   section{padding-top:64px}
   .job,.award{grid-template-columns:1fr;gap:10px}
-  .grid,.stack{grid-template-columns:1fr}
+  .grid,.grid.three,.stack{grid-template-columns:1fr}
   .card.wide{grid-column:auto}
   }
 </style>
@@ -258,6 +260,7 @@ footer a:hover{color:var(--text)}
     <div class="stat spot gold"><b>Winner</b><span>USAII Global AI Hackathon 2026</span></div>
     <div class="stat spot violet"><b>Finalist</b><span>Smart India Hackathon 2026</span></div>
     <div class="stat spot green"><b>6–8 min → &lt;1 min</b><span>Policy processing time at Tameen</span></div>
+    <div class="stat spot teal"><b>Selected</b><span>180 Degrees Consulting NITK Tech Team</span></div>
   </div>
 
   <!-- EXPERIENCE -->
@@ -308,6 +311,13 @@ footer a:hover{color:var(--text)}
         </div>
       </article>
 
+      <article class="card wide t spot reveal">
+        <span class="badge teal">Selected · 180 Degrees Consulting NITK Tech Team</span>
+        <h3>Inventory &amp; Stock Tracker</h3>
+        <p>Full-stack tracker with agentic AI. Got me selected for the 180 Degrees Consulting NITK Tech Team.</p>
+        <div class="links-row"><a href="https://github.com/Adiiiiiiiiiiithegoat/180DC-project" target="_blank" rel="noopener">Code ↗</a></div>
+      </article>
+
       <article class="card v spot reveal">
         <span class="badge violet">Finalist · Smart India Hackathon 2026</span>
         <h3>NETRA</h3>
@@ -350,12 +360,7 @@ footer a:hover{color:var(--text)}
 
     <div class="more">
       <h3 class="label mono">More projects</h3>
-      <div class="grid">
-        <article class="card spot reveal">
-          <h3>Inventory &amp; Stock Tracker</h3>
-          <p>Full-stack tracker with agentic AI. Got me selected for the 180 Degrees Consulting NITK Tech Team.</p>
-          <div class="links-row"><a href="https://github.com/Adiiiiiiiiiiithegoat/180DC-project" target="_blank" rel="noopener">Code ↗</a></div>
-        </article>
+      <div class="grid three">
         <article class="card spot reveal">
           <h3>Handyman</h3>
           <p>Controls Windows with ten webcam hand gestures (media, apps, folders, browser tabs), all remappable from one config file.</p>
@@ -386,7 +391,7 @@ footer a:hover{color:var(--text)}
       <span class="mono">2026</span>
       <div><b>Finalist, Smart India Hackathon</b><span>With NETRA, as part of a six-person team.</span></div>
     </div>
-    <div class="award reveal">
+    <div class="award teal reveal">
       <span class="mono">2026</span>
       <div><b>Selected, 180 Degrees Consulting NITK Tech Team</b><span>Developer track.</span></div>
     </div>
